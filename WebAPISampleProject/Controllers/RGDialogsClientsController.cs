@@ -27,7 +27,7 @@ namespace WebAPISampleProject.Controllers
                                                                 .Select(x => x.Key);
             if (dialogsContainingAllClients.Count() == 0)
             {
-                return new Guid[] { Guid.Empty }; //Если диалог со всеми клиентами не найден, то возвращается пустой GUID
+                return new Guid[] { Guid.Empty };
             }
 
             return dialogsContainingAllClients;
