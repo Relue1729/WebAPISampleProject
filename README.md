@@ -1,22 +1,17 @@
 # WebAPISampleProject
-Web API тестовое задание написанное на .NET 5.0
+Web API technical test assignment
 
-API доступен через через /RGDialogsClients, принимает Guid[] через GET запрос, возвращает HTTP Response 204 при отсутствии аргументов, Guid.Empty если подходящий результат не найден. 
-Доступен через SwaggerUI.
+Assignment Description:
 
-Возвращает GUID всех диалогов из RGDialogsClients.Init() что содержат в себе все IDClient GUID переданные в API (но не обязательно наоборот, если диалог содержит IDClient помимо тех что были переданы - он тоже будет возвращен)
+There is a RGDialogsClients entity. It contains the information about which users have interacted within a specific dialogue.
+We can have an indeterminate abount of IDClients that exist within one dialogue.
+Init function allows us to get a list of entities, which we could later process.
 
-Оригинальное описание задания:
+Requirements Specification:
 
-Есть сущность RGDialogsClients. Она предназначена для хранения информации о том, какие пользователи взаимодействуют в рамках одного диалога.
-Т.е. может быть N-ое количество IDClient, объединенных одним диалогом.
-Функция Init позоволяет получить набор сущностей, с котороыми можно производить операции.
+Create WebAPI project which would have an API method that would look for dialogues with the client IDs that were passed to the method.
+Method should accept a list of client IDs for which we need to find a dialogue. We need to find a dialogue that has all passed Client IDs. If such dialogue is not present we should return an empty GUID.
+If the dialogue has been found we should return its ID.
+Method should conform to OpenAPI specification and accessible through SwaggerUI
 
-Задача
-
-Написать проект WebAPI в котором будет реализован метод API поиска диалога с теми идентификаторами клиентов, которые были переданы в метод.
-Метод должен принимать список идентфикаторов клиентов для которых необходимо найти диалог. Нужно найти такой диалог, в котором есть все переданные клиенты. Если такого диалога нет, то возвращается пустой GUID.
-Если диалог найден возвращается идентификатор диалога.
-Метод должен быть описан в соотвествии со стандартом OpenAPI и доступен через SwaggerUI
-
-![Alt text](/screenshot.png?raw=true "Скриншот")
+![Alt text](/screenshot.png?raw=true "Screenshot")
